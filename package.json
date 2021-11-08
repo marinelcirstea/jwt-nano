@@ -1,0 +1,23 @@
+{
+  "name": "nanotoken",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist/index.d.ts",
+    "dist/index.js",
+    "src/index.ts"
+  ],
+  "main": "dist/index.js",
+  "types": "dist",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tsc -p ."
+  },
+  "keywords": [],
+  "author": "Marinel Cirstea <marinel.cirstea@gmail.com> (https://callmejohn.co.uk)",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "typescript": "^4.4.4"
+  }
+}
