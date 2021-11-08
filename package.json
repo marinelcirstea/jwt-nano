@@ -1,23 +1,34 @@
 {
   "name": "jwt-nano",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lightweight, 0 dependency Node.js module for working with JWT (JSON web tokens)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marinelcirstea/jwt-nano"
+  },
   "files": [
     "dist/index.d.ts",
     "dist/index.js",
-    "src/index.ts"
+    "src/index.ts",
+    "README.md"
   ],
   "main": "dist/index.js",
   "types": "dist",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"tsc -p ."
+    "test": "jest",
+    "dev": "ts-node-dev --respawn --pretty --transpile-only dev.ts",
+    "build": "tsc -p ."
   },
   "keywords": [],
-  "author": "Marinel Cirstea <marinel.cirstea@gmail.com> (https://callmejohn.co.uk)",
+  "author": "Marinel Cirstea",
+  "bugs": {
+    "url": "https://github.com/marinelcirstea/jwt-nano/issues"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.11.6",
+    "dotenv": "^10.0.0",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.4"
   }
 }
