@@ -4,7 +4,7 @@ Lightweight, 0 dependency Node.js module for working with JWT (JSON web tokens)
 
 ## Getting started
 
-### Install
+## Install
 
 ```sh
 npm install jwt-nano
@@ -17,7 +17,7 @@ just set this key as an environment variable.(this is the default set in the met
 JWT_SECRET_SHA256_KEY = mySecretSignature;
 ```
 
-### Usage
+## Usage
 
 ```javascript
 const jwt = require("jwt-nano");
@@ -46,7 +46,7 @@ if (payload) {
 }
 ```
 
-### Changing the environment key
+## Changing the environment key
 
 If you want to change the environment key from `JWT_SECRET_SHA256_KEY` to something else,
 you'll have to pass the password in each call
@@ -61,7 +61,7 @@ const key = process.env.mySecretKey;
 const token = encode({ message: "Hello, world!" }, key);
 ```
 
-### Changing the algorithm
+## Changing the algorithm
 
 The default algorithm is `sha256`, but it also supports `sha512`
 
