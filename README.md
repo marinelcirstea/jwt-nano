@@ -14,7 +14,7 @@ If you don't want to pass the password as a param in every `decode(x)` or `encod
 just set this key as an environment variable.(this is the default set in the methods)
 
 ```node
-JWT_SECRET_SHA256_KEY = mySecretSignature;
+JWT_SECRET_SHA256_KEY=mySecretPassword1234567890
 ```
 
 ## Usage
