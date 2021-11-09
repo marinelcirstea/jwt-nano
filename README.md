@@ -63,7 +63,7 @@ const token = encode({ message: "Hello, world!" }, key);
 
 ## Changing the algorithm
 
-The default algorithm is `sha256`, but it also supports `sha512`
+The default algorithm is `sha256`, but it also supports `sha384` `sha512`
 
 If you change it, you'll have to pass the key as a param as well.
 
@@ -71,8 +71,8 @@ Example:
 
 ```javascript
 const { encode } = require("jwt-nano");
-
-const token = encode({ message: "Hello, world!" }, mySecretKey, "sha512");
+// HS512 = sha512 / HS384=sha384 / HS256=sha256(default)
+const token = encode({ message: "Hello, world!" }, mySecretKey, "HS512");
 ```
 
 ## Client-side
@@ -90,3 +90,9 @@ if (!payload) return console.log(" No payload :( "); // handle accordingly
 
 const data = JSON.parse(Buffer.from(payload, "base64url").toString());
 ```
+
+### Notes
+I wasn't expecting this, but looks like you can encode just about anything, not just objects, strings and numbers.
+
+What seemed quite weird was that you can send empty arrays `[]`, empty objects `{}`, 
+`null`, `false`, `true`, `0`, but you can't send empty strings, which is strange, but whatever.. now it does exactly what the official does(with the caveat of not being able to use other algorithms, just `sha256`,`sha384` and `sha512`), but for a fraction of the code.
