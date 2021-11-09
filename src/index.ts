@@ -1,6 +1,6 @@
 /**
  * @author  Marinel Cirstea
- * Time wasted: ~ 4 hours
+ * Time wasted: ~ 6 hours
  * JWT token consists of 3 segments, each separated by a dot (" . "):
  *  - Header
  *  - Payload
