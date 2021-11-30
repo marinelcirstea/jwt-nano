@@ -84,9 +84,7 @@ You can just use this:
 
 ```javascript
 // this assumes you sent the token as a header with the key "x-auth-token", edit to match your needs
-const [header, payload, signature] = res.headers["x-auth-token"]?.split(".");
-
-if (!payload) return console.log(" No payload :( "); // handle accordingly
+const token = res.headers["x-auth-token"]
 
 const data = getDataFromPayload(payload)
 
@@ -94,6 +92,7 @@ const getDataFromPayload = (token) => {
   try {
     return JSON.parse(atob(token.split(".")[1]));
   } catch (e) {
+    // payload may be a string, try decoding if it fails parsing it
     return atob(token.split(".")[1]);
   }
 };
