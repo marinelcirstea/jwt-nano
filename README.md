@@ -88,7 +88,16 @@ const [header, payload, signature] = res.headers["x-auth-token"]?.split(".");
 
 if (!payload) return console.log(" No payload :( "); // handle accordingly
 
-const data = JSON.parse(Buffer.from(payload, "base64url").toString());
+const data = getDataFromPayload(payload)
+
+const getDataFromPayload = (token) => {
+  try {
+    return JSON.parse(atob(token.split(".")[1]));
+  } catch (e) {
+    return atob(token.split(".")[1]);
+  }
+};
+
 ```
 
 ### Notes
