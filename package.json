@@ -1,6 +1,6 @@
 {
   "name": "jwt-nano",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight, 0 dependency Node.js module for working with JWT (JSON web tokens)",
   "repository": {
     "type": "git",

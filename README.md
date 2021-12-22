@@ -86,9 +86,9 @@ You can just use this:
 // this assumes you sent the token as a header with the key "x-auth-token", edit to match your needs
 const token = res.headers["x-auth-token"]
 
-const data = getDataFromPayload(payload)
+const data = getPayloadFromToken(token)
 
-const getDataFromPayload = (token) => {
+const getPayloadFromToken = (token) => {
   try {
     return JSON.parse(atob(token.split(".")[1]));
   } catch (e) {
